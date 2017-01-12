@@ -6,12 +6,13 @@ namespace VerbsPractice
 	{
 		static List<Verb> _verbs;
 		static string[] obj = new string[1];
+
+
 		static void Error(string[] verbo)
 		{
 			string Path = System.Reflection.Assembly.GetEntryAssembly().Location;
 
-			System.IO.File.WriteAllLines(Path+@"Mistakes.txt", verbo);
-
+			System.IO.File.AppendAllLines(Path+@"Mistakes.txt", verbo);
 		}
 
 		public static void Main(string[] args)
@@ -21,7 +22,7 @@ namespace VerbsPractice
 			Console.WriteLine("Welcome Sr. Antonio de Jesus Cortes Lagunes!!!");
 
 			//PresentVerbsIrregulars();
-			practiceIregularsVerbs();
+			practiceIrregularsVerbs();
 
 
 		}
@@ -29,60 +30,74 @@ namespace VerbsPractice
 
 		static void practiceRegularsVerbs()
 		{
+			String answer = "";
 			foreach (var i in _verbs)
 			{
 				Console.WriteLine("VERB: " + i.TRANSLATION);
 
 				Console.WriteLine("INFINITIVE: ");
 
-				if (Console.ReadLine().Trim() != i.INFINITIVE.Trim())
+				answer = Console.ReadLine().Trim();
+
+				if (answer != i.INFINITIVE.Trim())
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
 					Console.WriteLine("ERROR EN EL VERBO  " + i.INFINITIVE);
-					obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.INFINITIVE;
+
+					obj[0] = "[" + DateTime.Now.ToString() + "] [INFINITIVE] ["+i.INFINITIVE+"] ["+answer+"] ";
+
 					Error(obj);
 				}
 
 				Console.WriteLine("PAST : ");
 
-				if (Console.ReadLine() != i.PAST)
+				answer = Console.ReadLine().Trim();
+
+				if (answer != i.PAST)
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
 
 					Console.WriteLine("ERROR EN EL VERBO  " + i.PAST);
-					obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PAST;
+					obj[0] = "[" + DateTime.Now.ToString() + "] [PAST] [" + i.PAST + "] [" + answer + "] ";
 					Error(obj);
 				}
 
 				Console.WriteLine("PAST PARTICIPLE : ");
+
+				answer = Console.ReadLine().Trim();
 
 				if (Console.ReadLine() != i.PAST_PARTICIPLE)
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
 
 					Console.WriteLine("ERROR EN EL VERBO  " + i.PAST_PARTICIPLE);
-					obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PAST_PARTICIPLE;
+					obj[0] = "[" + DateTime.Now.ToString() + "] [PAST_PARTICIPLE] [" + i.PAST_PARTICIPLE + "] [" + answer + "] ";
 					Error(obj);
 				}
 
 				Console.WriteLine("PRESENT : ");
 
-				if (Console.ReadLine() != i.PRESENT)
+				answer = Console.ReadLine().Trim();
+
+				if (answer != i.PRESENT)
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
 
 					Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT);
-					obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PRESENT;
+					obj[0] = "[" + DateTime.Now.ToString() + "] [PRESENT] [" + i.PRESENT + "] [" + answer + "] ";
 					Error(obj);
 				}
 
 				Console.WriteLine("GERUND : ");
-				if (Console.ReadLine() != i.PRESENT_PARTICIPLE)
+
+				answer = Console.ReadLine().Trim();
+
+				if (answer != i.PRESENT_PARTICIPLE)
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
 
 					Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT_PARTICIPLE);
-					obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PRESENT_PARTICIPLE;
+					obj[0] = "[" + DateTime.Now.ToString() + "] [PRESENT_PARTICIPLE] [" + i.PRESENT_PARTICIPLE + "] [" + answer + "] ";
 					Error(obj);
 				}
 			}//FIN FOREACH
@@ -94,108 +109,124 @@ namespace VerbsPractice
 
 			Console.WriteLine("------Irregular Verbs------");
 			Console.WriteLine("");
-
-			foreach (var i in _verbs)
+			int ip = 0;
+			while (ip<10)
 			{
-				if (i.TIPO == "IREGULAR")
+				foreach (var i in _verbs)
 				{
-					Console.WriteLine("");
-					Console.WriteLine("VERB: " + i.TRANSLATION);
-					Console.WriteLine("");
-					Console.ReadLine();
-					Console.WriteLine("INFINITIVE FORM:  " + i.INFINITIVE);
-					Console.WriteLine("");
-					Console.ReadLine();
-					Console.WriteLine("PAST FORM:  " + i.PAST);
-					Console.WriteLine("");
-					Console.ReadLine();
-					Console.WriteLine("PRESENT FORM:  " + i.PRESENT);
-					Console.WriteLine("");
-					Console.ReadLine();
-					Console.WriteLine("PAST PARTICIPLE FORM:  " + i.PAST_PARTICIPLE);
-					Console.WriteLine("");
-					Console.ReadLine();
-					Console.WriteLine("PRESENT PARTICIPLE FORM:  " + i.PRESENT_PARTICIPLE);
-									
-				}
-			}//FIN FOREACH
-
-			Console.WriteLine("finish ..!!!");
-		}
-
-
-		static void practiceIregularsVerbs()
-		{
-			foreach (var i in _verbs)
-			{
-				if (i.TIPO == "IREGULAR")
-				{
-
-					Console.WriteLine("VERB: " + i.TRANSLATION);
-
-					Console.WriteLine("INFINITIVE: ");
-
-					if (Console.ReadLine().Trim() != i.INFINITIVE.Trim())
+					if (i.TIPO == "IREGULAR")
 					{
-						Console.ForegroundColor = ConsoleColor.Red;
-						Console.WriteLine("ERROR EN EL VERBO  " + i.INFINITIVE);
-						obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.INFINITIVE;
-						Error(obj);
-					}
+						Console.WriteLine("");
+						Console.WriteLine("VERB: " + i.TRANSLATION);
+						Console.WriteLine("");
+						Console.ReadLine();
+						Console.WriteLine("INFINITIVE FORM:  " + i.INFINITIVE);
+						Console.WriteLine("");
+						Console.ReadLine();
+						Console.WriteLine("PAST FORM:  " + i.PAST);
+						Console.WriteLine("");
+						Console.ReadLine();
+						Console.WriteLine("PRESENT FORM:  " + i.PRESENT);
+						Console.WriteLine("");
+						Console.ReadLine();
+						Console.WriteLine("PAST PARTICIPLE FORM:  " + i.PAST_PARTICIPLE);
+						Console.WriteLine("");
+						Console.ReadLine();
+						Console.WriteLine("PRESENT PARTICIPLE FORM:  " + i.PRESENT_PARTICIPLE);
 
-					Console.WriteLine("PAST : ");
-
-					if (Console.ReadLine() != i.PAST)
-					{
-						Console.ForegroundColor = ConsoleColor.Red;
-
-						Console.WriteLine("ERROR EN EL VERBO  " + i.PAST);
-						obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PAST;
-						Error(obj);
-					}
-
-					Console.WriteLine("PAST PARTICIPLE : ");
-
-					if (Console.ReadLine() != i.PAST_PARTICIPLE)
-					{
-						Console.ForegroundColor = ConsoleColor.Red;
-
-						Console.WriteLine("ERROR EN EL VERBO  " + i.PAST_PARTICIPLE);
-						obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PAST_PARTICIPLE;
-						Error(obj);
-					}
-
-					Console.WriteLine("PRESENT : ");
-
-					if (Console.ReadLine() != i.PRESENT)
-					{
-						Console.ForegroundColor = ConsoleColor.Red;
-
-						Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT);
-						obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PRESENT;
-						Error(obj);
-					}
-
-					Console.WriteLine("GERUND : ");
-					if (Console.ReadLine() != i.PRESENT_PARTICIPLE)
-					{
-						Console.ForegroundColor = ConsoleColor.Red;
-
-						Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT_PARTICIPLE);
-						obj[0] = "[" + new DateTime().Date.ToString() + "] ERROR EN EL VERBO: " + i.PRESENT_PARTICIPLE;
-						Error(obj);
 					}
 				}//FIN FOREACH
+				ip++;
 			}
-
 			Console.WriteLine("finish ..!!!");
 		}
 
 
+		static void practiceIrregularsVerbs()
+		{
+			String answer = "";
+			int ip = 0;
+			while (ip < 1)
+			{
+				foreach (var i in _verbs)
+				{
+					if (i.TIPO == "IREGULAR")
+					{
 
+						Console.WriteLine("VERB: " + i.TRANSLATION);
 
+						Console.WriteLine("INFINITIVE: ");
 
+						answer = Console.ReadLine().Trim();
 
+						if (answer != i.INFINITIVE.Trim())
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+							Console.WriteLine("ERROR EN EL VERBO  " + i.INFINITIVE);
+
+							obj[0] = "[" + DateTime.Now.ToString() + "] [INFINITIVE] [" + i.INFINITIVE + "] [" + answer + "] ";
+
+							Error(obj);
+						}
+
+						Console.WriteLine("PAST : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PAST)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PAST);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PAST] [" + i.PAST + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+						Console.WriteLine("PAST PARTICIPLE : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PAST_PARTICIPLE)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PAST_PARTICIPLE);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PAST_PARTICIPLE] [" + i.PAST_PARTICIPLE + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+						Console.WriteLine("PRESENT : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PRESENT)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PRESENT] [" + i.PRESENT + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+						Console.WriteLine("GERUND : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PRESENT_PARTICIPLE)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT_PARTICIPLE);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PRESENT_PARTICIPLE] [" + i.PRESENT_PARTICIPLE + "] [" + answer + "] ";
+							Error(obj);
+						}
+					}//FIN FOREACH
+				}
+				ip++;
+			}
+			obj[0] = "[" + DateTime.Now.ToString() + "] "+" Termino de ejercicio correcto ";
+			Console.WriteLine("finish ..!!!");
+		}
 
 		static void fill()
 		{
@@ -210,32 +241,34 @@ namespace VerbsPractice
             comenzar--
             manejar--
             venir--
-            escribir
-            leer
-            ser/estar
-            cortar
-            volar
-            caminar
-            tomar de la mano
-            estudiar
-            conseguir-obtener
-            nadar
-            enseñar
-            comprender
-            montar
-            dar
-            beber
-            vender
-            atrapar
-            encontrar
-            robar
-            sostener
-            mojarse
+            escribir-
+            leer-
+            ser/estar-
+            cortar-
+            volar-
+            caminar-
+            tomar de la mano-
+            estudiar-
+            conseguir-obtener-
+            nadar-
+			enseñar
+            comprender-
+            montar-
+            dar-
+            beber-
+            vender-
+            atrapar-
+            encontrar-
+            robar-
+            sostener-
+            mojarse-
+
+
+
+
 			invitar
             nacer
-
-
-            escuchar
+			escuchar
             jugar
             costar
             llamar
@@ -263,6 +296,7 @@ namespace VerbsPractice
 			*/
 			_verbs = new List<Verb>()
 			{
+				
 				new Verb(){ INFINITIVE="TO ACCEPT",   PAST="ACCEPTED",   PAST_PARTICIPLE="ACCEPTED",   PRESENT="ACCEPT",    PRESENT_PARTICIPLE="ACCEPTING",    TRANSLATION="ACEPTAR"    ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO ANSWER",   PAST="ANSWERED",   PAST_PARTICIPLE="ANSWERED",   PRESENT="ANSWER",    PRESENT_PARTICIPLE="ANSWERING",    TRANSLATION="RESPONDER"  ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO ANNOUNCE", PAST="ANNOUNCED",  PAST_PARTICIPLE="ANNOUNCED",  PRESENT="ANNOUNCE",  PRESENT_PARTICIPLE="ANNOUNCING",   TRANSLATION="ANUNCIAR"   ,TIPO="REGULAR"},
@@ -295,11 +329,30 @@ namespace VerbsPractice
 				new Verb(){ INFINITIVE="TO GO",       PAST="WENT",       PAST_PARTICIPLE="GONE",       PRESENT="GO",        PRESENT_PARTICIPLE="GOING",        TRANSLATION="IR"         ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO BEGIN",    PAST="BEGAN",      PAST_PARTICIPLE="BEGUN",      PRESENT="BEGIN",     PRESENT_PARTICIPLE="BEGINNING",    TRANSLATION="EMPEZAR"    ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO DRIVE",    PAST="DROVE",      PAST_PARTICIPLE="DRIVEN",     PRESENT="DRIVE",     PRESENT_PARTICIPLE="DRIVING",      TRANSLATION="MANEJAR"    ,TIPO="IREGULAR"},
-				new Verb(){ INFINITIVE="TO COME",     PAST="CAME",       PAST_PARTICIPLE="COME",       PRESENT="COME",      PRESENT_PARTICIPLE="COMING",       TRANSLATION="VENIR"      ,TIPO="IREGULAR"}
+				new Verb(){ INFINITIVE="TO COME",     PAST="CAME",       PAST_PARTICIPLE="COME",       PRESENT="COME",      PRESENT_PARTICIPLE="COMING",       TRANSLATION="VENIR"      ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO WRITE",    PAST="WROTE",      PAST_PARTICIPLE="WRITTEN",    PRESENT="WRITE",     PRESENT_PARTICIPLE="WRITING",      TRANSLATION="ESCRIBIR"   ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO READ",     PAST="READ",       PAST_PARTICIPLE="READ",       PRESENT="READ",      PRESENT_PARTICIPLE="READING",      TRANSLATION="LEER"       ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO BE",       PAST="WAS/WERE",   PAST_PARTICIPLE="BEEN",       PRESENT="BE",        PRESENT_PARTICIPLE="BEING",        TRANSLATION="SER/ESTAR"  ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO CUT",      PAST="CUT",        PAST_PARTICIPLE="CUT",        PRESENT="CUT",       PRESENT_PARTICIPLE="CUTING",       TRANSLATION="CORTAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO FLY",      PAST="FLEW",       PAST_PARTICIPLE="FLOWN",      PRESENT="FLY",       PRESENT_PARTICIPLE="FLYING",       TRANSLATION="VOLAR"      ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO WALK",     PAST="WALKED",     PAST_PARTICIPLE="WALKED",     PRESENT="WALK",      PRESENT_PARTICIPLE="WALKING",      TRANSLATION="CAMINAR"    ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO TAKE",     PAST="TOOK",       PAST_PARTICIPLE="TAKEN",      PRESENT="TAKE",      PRESENT_PARTICIPLE="TAKING",       TRANSLATION="TOMAR DE LA MANO"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO STUDY",    PAST="STUDIED",    PAST_PARTICIPLE="STUDIED",    PRESENT="STUDY",     PRESENT_PARTICIPLE="STUDYING",     TRANSLATION="ESTUDIAR"   ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO GET",      PAST="GOT",        PAST_PARTICIPLE="GOTTEN",     PRESENT="GET",       PRESENT_PARTICIPLE="GETTING",      TRANSLATION="OBTENER"    ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO SWIM",     PAST="SWAM",       PAST_PARTICIPLE="SWUM",       PRESENT="SWIM",      PRESENT_PARTICIPLE="SWIMMING",     TRANSLATION="NADAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO TEACH",     PAST="TAUGHT",    PAST_PARTICIPLE="TAUHT",      PRESENT="TEACH",     PRESENT_PARTICIPLE="TEACHING",     TRANSLATION="ENSEÑAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO LEANR",     PAST="LEARNED",   PAST_PARTICIPLE="LEARNED",    PRESENT="LEARN",     PRESENT_PARTICIPLE="LEARNING",     TRANSLATION="APRENDER"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO MOUNT",     PAST="MOUNTED",   PAST_PARTICIPLE="MOUNTED",    PRESENT="MOUNT",     PRESENT_PARTICIPLE="MOUNTING",     TRANSLATION="MONTAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO GIVE",      PAST="GAVE",      PAST_PARTICIPLE="GIVEN",      PRESENT="GIVE",      PRESENT_PARTICIPLE="GIVING",       TRANSLATION="DAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO DRINK",     PAST="DRANK",     PAST_PARTICIPLE="DRUNK",      PRESENT="DRINK",     PRESENT_PARTICIPLE="DRINKING",     TRANSLATION="TOMAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO CATCH",     PAST="CAUGHT",    PAST_PARTICIPLE="CAUGHT",     PRESENT="CATCH",     PRESENT_PARTICIPLE="CATCHING",     TRANSLATION="ATRAPAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO FIND",      PAST="FOUND", 	 PAST_PARTICIPLE="FOUND",      PRESENT="FIND",      PRESENT_PARTICIPLE="FINDING",      TRANSLATION="ENCONTRAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO STEAL",     PAST="STOLE",     PAST_PARTICIPLE="STOLEN",     PRESENT="STEAL",     PRESENT_PARTICIPLE="STEALING",     TRANSLATION="ROBAR"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO HOLD",      PAST="HELD",      PAST_PARTICIPLE="HELD",       PRESENT="HOLD",      PRESENT_PARTICIPLE="HOLDING",      TRANSLATION="SOSTENER"     ,TIPO="IREGULAR"},
+				new Verb(){ INFINITIVE="TO GET WET",   PAST="GOT WET",   PAST_PARTICIPLE="I'VE BEEN WET",PRESENT="GET WET", PRESENT_PARTICIPLE="GETTING WET",     TRANSLATION="NADAR"     ,TIPO="IREGULAR"},
+				};
 
-			};
 		}
-
 
 	}
 }
