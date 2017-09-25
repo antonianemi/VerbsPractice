@@ -15,27 +15,62 @@ namespace VerbsPractice
 		{
 			string Path = System.Reflection.Assembly.GetEntryAssembly().Location;
 
-			System.IO.File.AppendAllLines(Path+@"Mistakes.txt", verbo);
+			System.IO.File.AppendAllLines(Path + @"Mistakes.txt", verbo);
 		}
 
 		public static void Main(string[] args)
 		{
-			
-			fill();
-            //fill_error_1();
 			Console.WriteLine("Welcome Sr. Antonio de Jesus Cortes Lagunes!!!");
 
-            String data = JsonConvert.SerializeObject(_verbs);
+			int op;
+			do
+			{
+				Console.Clear();
+				Console.WriteLine("[ 1 ] Practice Irregular Verbs easy way");
+				Console.WriteLine("[ 2 ] Practice Regular Verbs easy way");
+				Console.WriteLine("[ 3 ] Practice Irregular Verbs hard way");
+				Console.WriteLine("[ 4 ] Practice Regular Verbs hard way");
+				Console.WriteLine("[ 0 ] Exit");
+				Console.WriteLine("-------------------------------------");
+				Console.Write("Write an option: ");
 
-			//PresentVerbsIrregulars();
-			practiceIrregularsVerbs();
+				if(Int32.TryParse(Console.ReadLine(),out op)){
+					switch (op)
+					{
+						case 1:
+							practiceIrregularsVerbs();
+							break;
+						case 2:
+							practiceRegularsVerbs();
+							break;
+						case 3:
+							practiceIrregularCompleteVerbs();
+							break;
+						case 4:
+							practiceRegularCompleteVerbs();
+							break;
+						default:
+							System.Environment.Exit(0);
+							break;
+					}
+					Console.ReadKey();
+					Console.Clear();
+				}
 
+
+			}
+			while (op != 0);
 
 		}
 
 
+
+
+
+
 		static void practiceRegularsVerbs()
 		{
+			fill();
 			String answer = "";
 			foreach (var i in _verbs)
 			{
@@ -72,7 +107,7 @@ namespace VerbsPractice
 
 				answer = Console.ReadLine().Trim();
 
-				if (Console.ReadLine() != i.PAST_PARTICIPLE)
+				if (answer != i.PAST_PARTICIPLE)
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
 
@@ -150,6 +185,7 @@ namespace VerbsPractice
 		#region irregularVerbs
 		static void practiceIrregularsVerbs()
 		{
+			fill();
 			String answer = "";
 			int ip = 0;
 			while (ip < 1)
@@ -256,6 +292,14 @@ namespace VerbsPractice
 		}
 
 
+
+		static void practiceIrregularCompleteVerbs(){
+			
+		}
+		static void practiceRegularCompleteVerbs()
+		{
+
+		}
 
 
 
