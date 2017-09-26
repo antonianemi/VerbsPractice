@@ -387,7 +387,7 @@ namespace VerbsPractice
 				new Verb(){ INFINITIVE="TO COUNT",    PAST="COUNTED",    PAST_PARTICIPLE="COUNTED",    PRESENT="COUNT",     PRESENT_PARTICIPLE="COUNTING",     TRANSLATION="CONTAR"     ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO DANCE",    PAST="DANCED",     PAST_PARTICIPLE="DANCED",     PRESENT="DANCE",     PRESENT_PARTICIPLE="DANCING",      TRANSLATION="BAILAR"     ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO DARE",     PAST="DARED",      PAST_PARTICIPLE="DARED",      PRESENT="DARE",      PRESENT_PARTICIPLE="DARING",       TRANSLATION="ATREVERSE"  ,TIPO="REGULAR"},
-				new Verb(){ INFINITIVE="TO DATE",     PAST="DATED",      PAST_PARTICIPLE="DATED",      PRESENT="DATE",      PRESENT_PARTICIPLE="DATING",       TRANSLATION="SALIR"      ,TIPO="REGULAR"},
+				new Verb(){ INFINITIVE="TO DATE",     PAST="DATED",      PAST_PARTICIPLE="DATED",      PRESENT="DATE",      PRESENT_PARTICIPLE="DATING",       TRANSLATION="SALIR CON ALGUIEN"      ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO DELIVER",  PAST="DELIVERED",  PAST_PARTICIPLE="DELIVERED",  PRESENT="DELIVER",   PRESENT_PARTICIPLE="DELIVERING",   TRANSLATION="ENTREGAR"   ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO DRESS",    PAST="DRESSED",    PAST_PARTICIPLE="DRESSED",    PRESENT="DRESS",     PRESENT_PARTICIPLE="DRESSING",     TRANSLATION="VESTIR"     ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO END",      PAST="ENDED",      PAST_PARTICIPLE="ENDED",      PRESENT="END",       PRESENT_PARTICIPLE="ENDING",       TRANSLATION="TERMINAR"   ,TIPO="REGULAR"},
@@ -395,7 +395,6 @@ namespace VerbsPractice
 				new Verb(){ INFINITIVE="TO ERASE",    PAST="ERASED",     PAST_PARTICIPLE="ERASED",     PRESENT="ERASE",     PRESENT_PARTICIPLE="ERASING",      TRANSLATION="BORRAR"     ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO EXPECT",   PAST="EXPECTED",   PAST_PARTICIPLE="EXPECTED",   PRESENT="EXPECT",    PRESENT_PARTICIPLE="EXPECTING",    TRANSLATION="ESPERAR"    ,TIPO="REGULAR"},
 				new Verb(){ INFINITIVE="TO DREAM",    PAST="DREAMT",     PAST_PARTICIPLE="DREAMT",     PRESENT="DREAM",     PRESENT_PARTICIPLE="DREAMING",     TRANSLATION="SOÑAR"      ,TIPO="IREGULAR"},
-				new Verb(){ INFINITIVE="TO EAT",      PAST="ATE",        PAST_PARTICIPLE="EATEN",      PRESENT="EAT",       PRESENT_PARTICIPLE="EATING",       TRANSLATION="COMER"      ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO FINISH",   PAST="FINISHED",   PAST_PARTICIPLE="FINISHED",   PRESENT="FINISH",    PRESENT_PARTICIPLE="FINISHING",    TRANSLATION="TERMINAR"   ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO REST",     PAST="RESTED",     PAST_PARTICIPLE="RESTED",     PRESENT="REST",      PRESENT_PARTICIPLE="RESTING",      TRANSLATION="DESCANSAR"  ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO KNOW",     PAST="KNEW",       PAST_PARTICIPLE="KNOWN",      PRESENT="KNOW",      PRESENT_PARTICIPLE="KNOWING",      TRANSLATION="CONOCER"    ,TIPO="IREGULAR"},
@@ -406,20 +405,133 @@ namespace VerbsPractice
 				new Verb(){ INFINITIVE="TO WRITE",    PAST="WROTE",      PAST_PARTICIPLE="WRITTEN",    PRESENT="WRITE",     PRESENT_PARTICIPLE="WRITING",      TRANSLATION="ESCRIBIR"   ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO BE",       PAST="WAS/WERE",   PAST_PARTICIPLE="BEEN",       PRESENT="BE",        PRESENT_PARTICIPLE="BEING",        TRANSLATION="SER/ESTAR"  ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO CUT",      PAST="CUT",        PAST_PARTICIPLE="CUT",        PRESENT="CUT",       PRESENT_PARTICIPLE="CUTING",       TRANSLATION="CORTAR"     ,TIPO="IREGULAR"},
-				new Verb(){ INFINITIVE="TO FLY",      PAST="FLEW",       PAST_PARTICIPLE="FLOWN",      PRESENT="FLY",       PRESENT_PARTICIPLE="FLYING",       TRANSLATION="VOLAR"      ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO WALK",     PAST="WALKED",     PAST_PARTICIPLE="WALKED",     PRESENT="WALK",      PRESENT_PARTICIPLE="WALKING",      TRANSLATION="CAMINAR"    ,TIPO="IREGULAR"},
-				new Verb(){ INFINITIVE="TO TAKE",     PAST="TOOK",       PAST_PARTICIPLE="TAKEN",      PRESENT="TAKE",      PRESENT_PARTICIPLE="TAKING",       TRANSLATION="TOMAR DE LA MANO"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO STUDY",    PAST="STUDIED",    PAST_PARTICIPLE="STUDIED",    PRESENT="STUDY",     PRESENT_PARTICIPLE="STUDYING",     TRANSLATION="ESTUDIAR"   ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO GET",      PAST="GOT",        PAST_PARTICIPLE="GOTTEN",     PRESENT="GET",       PRESENT_PARTICIPLE="GETTING",      TRANSLATION="OBTENER"    ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO SWIM",     PAST="SWAM",       PAST_PARTICIPLE="SWUM",       PRESENT="SWIM",      PRESENT_PARTICIPLE="SWIMMING",     TRANSLATION="NADAR"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO TEACH",     PAST="TAUGHT",    PAST_PARTICIPLE="TAUHT",      PRESENT="TEACH",     PRESENT_PARTICIPLE="TEACHING",     TRANSLATION="ENSEÑAR"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO LEANR",     PAST="LEARNED",   PAST_PARTICIPLE="LEARNED",    PRESENT="LEARN",     PRESENT_PARTICIPLE="LEARNING",     TRANSLATION="APRENDER"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO MOUNT",     PAST="MOUNTED",   PAST_PARTICIPLE="MOUNTED",    PRESENT="MOUNT",     PRESENT_PARTICIPLE="MOUNTING",     TRANSLATION="MONTAR"     ,TIPO="IREGULAR"},
-				new Verb(){ INFINITIVE="TO GIVE",      PAST="GAVE",      PAST_PARTICIPLE="GIVEN",      PRESENT="GIVE",      PRESENT_PARTICIPLE="GIVING",       TRANSLATION="DAR"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO CATCH",     PAST="CAUGHT",    PAST_PARTICIPLE="CAUGHT",     PRESENT="CATCH",     PRESENT_PARTICIPLE="CATCHING",     TRANSLATION="ATRAPAR"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO STEAL",     PAST="STOLE",     PAST_PARTICIPLE="STOLEN",     PRESENT="STEAL",     PRESENT_PARTICIPLE="STEALING",     TRANSLATION="ROBAR"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO HOLD",      PAST="HELD",      PAST_PARTICIPLE="HELD",       PRESENT="HOLD",      PRESENT_PARTICIPLE="HOLDING",      TRANSLATION="SOSTENER"     ,TIPO="IREGULAR"},
 				new Verb(){ INFINITIVE="TO GET WET",   PAST="GOT WET",   PAST_PARTICIPLE="I'VE BEEN WET",PRESENT="GET WET", PRESENT_PARTICIPLE="GETTING WET",     TRANSLATION="NADAR"     ,TIPO="IREGULAR"},
+
+
+
+
+
+
+				new Verb(){
+					INFINITIVE="TO GROW",
+					PAST="GREW",
+					PAST_PARTICIPLE="GROWN",
+					PRESENT="GROW",
+					PRESENT_PARTICIPLE="GROWING",
+					TRANSLATION="CRECER",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "",
+					EXAMPLE_PAST = "",
+					EXAMPLE_PAST_PARTICIPLE = ""
+				},
+
+
+
+				new Verb(){ 
+					INFINITIVE="TO FLY",
+					PAST="FLEW",
+					PAST_PARTICIPLE="FLOWN",
+					PRESENT="FLY",
+					PRESENT_PARTICIPLE="FLYING",
+					TRANSLATION="VOLAR",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Vicky hates to fly",
+					EXAMPLE_PAST = "We flew from atlanta to Fort Lauderdale in an/one hour",
+					EXAMPLE_PAST_PARTICIPLE = "We have never flown before"
+				},
+
+				new Verb(){
+					INFINITIVE="TO BREAK",
+					PAST="BROKE",
+					PAST_PARTICIPLE="BROKEN",
+					PRESENT="BREAK",
+					PRESENT_PARTICIPLE="BREAKING",
+					TRANSLATION="ROMPER",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "You're gonna break your neck",
+					EXAMPLE_PAST = "I think i broke my glasses",
+					EXAMPLE_PAST_PARTICIPLE = "You have broken my heart"
+				},
+
+				new Verb(){
+					INFINITIVE="TO DO",
+					PAST="DID",
+					PAST_PARTICIPLE="DONE",
+					PRESENT="BREAK",
+					PRESENT_PARTICIPLE="BREAKING",
+					TRANSLATION="ROMPER",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Do the best you can",
+					EXAMPLE_PAST = "You did good",
+					EXAMPLE_PAST_PARTICIPLE = "The carpenter has done a great job"
+				},
+
+
+
+				new Verb(){
+					INFINITIVE="TO KNOW",
+					PAST="KNEW",
+					PAST_PARTICIPLE="KNOWN",
+					PRESENT="KNOW",
+					PRESENT_PARTICIPLE="KNOWING",
+					TRANSLATION="CONOCER",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Do you know what's going on?",
+					EXAMPLE_PAST = "I knew you'd say that",
+					EXAMPLE_PAST_PARTICIPLE = "We have known Billy since he was just a little kid"
+				},
+
+				new Verb(){
+					INFINITIVE="TO SELL",
+					PAST="SOLD",
+					PAST_PARTICIPLE="SOLD",
+					PRESENT="SELL",
+					PRESENT_PARTICIPLE="SEELING",
+					TRANSLATION="VENDER",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Johny wants to sell his car",
+					EXAMPLE_PAST = "They sold all of the girsl Scouts cookies",
+					EXAMPLE_PAST_PARTICIPLE = "The neighbors has sold their house"
+				},
+
+
+
+				new Verb(){
+					INFINITIVE="TO LEAVE",
+					PAST="LEFT",
+					PAST_PARTICIPLE="LEFT",
+					PRESENT="LEAVE",
+					PRESENT_PARTICIPLE="LEAVING",
+					TRANSLATION="PARTIR",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "What time do we leave?",
+					EXAMPLE_PAST = "They left earlier this morning",
+					EXAMPLE_PAST_PARTICIPLE = "Elvis has left the building"
+				},
+
+
+				new Verb(){ 
+					INFINITIVE="TO TAKE",
+					PAST="TOOK",
+					PAST_PARTICIPLE="TAKEN",
+					PRESENT="TAKE",
+					PRESENT_PARTICIPLE="TAKING",
+					TRANSLATION="TOMAR DE LA MANO",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "I'll take it",
+					EXAMPLE_PAST = "Tim took mary home",
+					EXAMPLE_PAST_PARTICIPLE = "They have taken all the puppies"
+				},
 
 
 				new Verb(){ 
@@ -625,7 +737,60 @@ namespace VerbsPractice
 					EXAMPLE_PRESENT = "How do you feel",
 					EXAMPLE_PAST = "I felt happy",
 					EXAMPLE_PAST_PARTICIPLE ="She has felt weak all day"
-				}
+				},
+
+
+				new Verb(){ 
+					INFINITIVE="TO EAT",
+					PAST="ATE",
+					PAST_PARTICIPLE="EATEN",
+					PRESENT="EAT",
+					PRESENT_PARTICIPLE="EATING",
+					TRANSLATION="COMER",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Jhony, eat your dinner",
+					EXAMPLE_PAST = "I already ate",
+					EXAMPLE_PAST_PARTICIPLE ="She hasn't eaten her lunch yet"
+				},
+
+				new Verb(){
+					INFINITIVE="TO FROGET",
+					PAST="FORGOT",
+					PAST_PARTICIPLE="FORGOTTEN",
+					PRESENT="FORGET",
+					PRESENT_PARTICIPLE="FORGETTING",
+					TRANSLATION="OLVIDAR",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Don't forget to wash your hands",
+					EXAMPLE_PAST = "I forgot i had a dentist appoiment",
+					EXAMPLE_PAST_PARTICIPLE ="Becky has forgotten her password"
+				},
+
+				new Verb(){ 
+					INFINITIVE="TO GIVE",
+					PAST="GAVE",
+					PAST_PARTICIPLE="GIVEN",
+					PRESENT="GIVE",
+					PRESENT_PARTICIPLE="GIVING",
+					TRANSLATION="DAR",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Here's a houndred dollars, i can give you the rest friday",
+					EXAMPLE_PAST = "I gave you a hundred dollars monday, here's the other hundred",
+					EXAMPLE_PAST_PARTICIPLE ="This car has given me a lot of trouble"
+				},
+
+				new Verb(){
+					INFINITIVE="TO SEND",
+					PAST="SENT",
+					PAST_PARTICIPLE="SENT",
+					PRESENT="SEND",
+					PRESENT_PARTICIPLE="SENDING",
+					TRANSLATION="MANDAR",
+					TIPO="IREGULAR",
+					EXAMPLE_PRESENT = "Send me an email",
+					EXAMPLE_PAST = "I sent you an email",
+					EXAMPLE_PAST_PARTICIPLE = "They have sent him to the office twice this week"
+				},
 
 				};
 
