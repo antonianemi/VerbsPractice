@@ -10,11 +10,9 @@ namespace VerbsPractice
 		static List<Verb> _verbs;
 		static string[] obj = new string[1];
 
-
 		static void Error(string[] verbo)
 		{
 			string Path = System.Reflection.Assembly.GetEntryAssembly().Location;
-
 			System.IO.File.AppendAllLines(Path + @"Mistakes.txt", verbo);
 		}
 
@@ -293,9 +291,147 @@ namespace VerbsPractice
 
 
 
+
+
 		static void practiceIrregularCompleteVerbs(){
-			
+			fill();
+			String answer = "";
+			int ip = 0;
+
+			while (ip < 1)
+			{
+				foreach (var i in _verbs)
+				{
+					if (i.TIPO == "IREGULAR")
+					{
+
+						Console.WriteLine("VERB: " + i.TRANSLATION);
+
+						Console.WriteLine("INFINITIVE: ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.INFINITIVE.Trim())
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+							Console.WriteLine("ERROR EN EL VERBO  " + i.INFINITIVE);
+
+							obj[0] = "[" + DateTime.Now.ToString() + "] [INFINITIVE] [" + i.INFINITIVE + "] [" + answer + "] ";
+
+							Error(obj);
+						}
+
+						Console.WriteLine("PAST : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PAST)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PAST);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PAST] [" + i.PAST + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+						Console.WriteLine("PAST PARTICIPLE : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PAST_PARTICIPLE)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PAST_PARTICIPLE);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PAST_PARTICIPLE] [" + i.PAST_PARTICIPLE + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+						Console.WriteLine("PRESENT : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PRESENT)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PRESENT] [" + i.PRESENT + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+						Console.WriteLine("GERUND : ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.PRESENT_PARTICIPLE)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT_PARTICIPLE);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [PRESENT_PARTICIPLE] [" + i.PRESENT_PARTICIPLE + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+
+						Console.WriteLine("EXAMPLE PRESENT: ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.EXAMPLE_PRESENT)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [EXAMPLE_PRESENT] [" + i.EXAMPLE_PRESENT + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+
+						Console.WriteLine("EXAMPLE PAST: ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.EXAMPLE_PAST)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [EXAMPLE_PAST] [" + i.EXAMPLE_PAST + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+						Console.WriteLine("EXAMPLE PAST PARTICIPLE: ");
+
+						answer = Console.ReadLine().Trim();
+
+						if (answer != i.EXAMPLE_PAST_PARTICIPLE)
+						{
+							Console.ForegroundColor = ConsoleColor.Red;
+
+							Console.WriteLine("ERROR EN EL VERBO  " + i.PRESENT);
+							obj[0] = "[" + DateTime.Now.ToString() + "] [EXAMPLE_PAST_PARTICIPLE] [" + i.EXAMPLE_PAST_PARTICIPLE + "] [" + answer + "] ";
+							Error(obj);
+						}
+
+
+					}//FIN FOREACH
+				}
+				ip++;
+			}
+			obj[0] = "[" + DateTime.Now.ToString() + "] " + " Termino de ejercicio correcto ";
+			Console.WriteLine("finish ..!!!");
 		}
+
+
+
+
+
+
+
+
+
+
 		static void practiceRegularCompleteVerbs()
 		{
 
